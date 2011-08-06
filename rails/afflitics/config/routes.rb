@@ -2,6 +2,10 @@ Afflitics::Application.routes.draw do
   root :to => "pages#index"
 
   devise_for :users
+  resources :users
+  
+  get 'pages/index'
+  get 'statistics/index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
