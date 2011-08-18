@@ -1,0 +1,18 @@
+html
+  head
+    script(src='http://code.jquery.com/jquery-1.6.1.min.js')
+    script(src="/socket.io/socket.io.js")
+    script
+
+      var socket = io.connect();
+      var session_id = 'abb';
+
+      socket.emit('auth', session_id);
+
+      socket.on(session_id, function(data) {
+        console.log(data);
+        $('#updates').append($('<p>').append(data));
+      });
+
+  body
+    #updates
