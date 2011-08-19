@@ -1,12 +1,13 @@
 class User
-	include MongoMapper::Document
-	plugin MongoMapper::Devise
+  include Mongoid::Document
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
-  key :services, Hash
+  field :name
+  validates_presence_of :name
+  validates_uniqueness_of :name, :email, :case_sensitive => false
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
-	devise :database_authenticatable, :confirmable, :lockable, 
-		:recoverable, :rememberable, :registerable, :trackable, 
-		:timeoutable, :validatable, :token_authenticatable
-
-	attr_accessible :email, :password, :password_confirmation
 end

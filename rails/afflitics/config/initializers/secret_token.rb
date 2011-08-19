@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Afflitics::Application.config.secret_token = '837e37063d913f045ccad9810f208b9d53ae7df194318f948a425b58142e47df8307a566519448414a13a1fe62a03fe1cd4234bdff087ab8cbf875f6fe9d8459'
+Afflitics::Application.config.secret_token = '97bf9576330279b02f8e6437ad86f3165ce0478a3b0ad95620ea3ab17a3a355916d8260b99782a72d576d4dfcf53be7743110bff26a0fb0e5c37220c403527f5'
