@@ -1,5 +1,7 @@
 Afflitics::Application.routes.draw do
 
+  get "home/queue"
+
   root :to => "home#index"
   devise_for :users
   resources :users, :only => :show

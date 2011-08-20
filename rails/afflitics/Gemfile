@@ -13,6 +13,10 @@ gem "devise", ">= 1.4.2"
 
 gem "resque", ">= 1.18.2"
 
+group :test do
+  gem "resque_spec"
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

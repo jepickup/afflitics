@@ -4,4 +4,9 @@ class HomeController < ApplicationController
     @users = User.all
   end
 
+  def queue
+    Resque.enqueue(BaseRunner)
+    render :text => "Running stats.." 
+  end
+
 end
