@@ -12,9 +12,10 @@ gem "mongoid", ">= 2.1.5"
 gem "devise", ">= 1.4.2"
 
 gem "resque", ">= 1.18.2"
+gem "resque-scheduler", "2.0.0.d"
 
 group :test do
-  gem "resque_spec"
+  gem "resque_spec", ">=0.7.0"
 end
 
 # Gems used only for assets and not required

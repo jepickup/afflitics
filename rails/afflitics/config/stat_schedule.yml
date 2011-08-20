@@ -1,0 +1,6 @@
+base:
+  cron: "*/30 * * * * *"
+  class: BaseRunner
+  queue: low
+  args:
+  description: "Gets one hour updates of stats"

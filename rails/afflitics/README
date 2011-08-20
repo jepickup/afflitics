@@ -15,3 +15,9 @@ Resque + resque_spec:
   /home/queue
 
   To start resque-web: resque-web
+
+Resque-scheduler:
+
+  rake resque:scheduler
+
+  bundle exec resque-web config/initializers/resque_config.rb
