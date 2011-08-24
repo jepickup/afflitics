@@ -26,9 +26,9 @@ end
 class Function
   include Mongoid::Document
 
-  field :request, type: String
-  field :function, type:String
+  field :request_str, type: String
+  field :function_str, type:String
 
-  validates_presence_of :request, :function
-  validates_uniqueness_of :request, :function
+  validates_presence_of :request_str, :function_str
+  validates_uniqueness_of :request_str, :function_str
 end

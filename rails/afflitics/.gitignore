@@ -4,4 +4,4 @@ log/*.log
 tmp/
 .sass-cache/
 *.lock
-*.swp
+*.sw*

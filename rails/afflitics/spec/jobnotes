@@ -1,0 +1,4 @@
+Runner's perform method is called by Resque with arguments: NetID, Request, UserConfig{}
+Runner picks a service and returns service configuration and request->function mapping
+Runner calls <service_type>Fetcher, passing: NetID, Function, UserConfig{}, ServiceConfig{}
+

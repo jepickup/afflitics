@@ -2,7 +2,6 @@ puts 'Emptying database'
 
 Mongoid.master.collections.reject { |c| c.name =~ /^system/}.each(&:drop)
 
-
 user = User.create! :name => 'Test User', :email => 'user@test.com', :password => 'please', :password_confirmation => 'please'
 puts 'New user created: ' << user.name
 
@@ -13,12 +12,12 @@ network = Network.create! :name => 'AffiliateWindow',
                               :type      => "SOAP",
                               :functions => [
                                 {
-                                  :request   => "get_click_stats",
-                                  :function  => "getClickStats"
+                                  :request_str   => "get_click_stats",
+                                  :function_str  => "getClickStats"
                                 },
                                 {
-                                  :request   => "get_impression_stats",
-                                  :function  => "getImpressionStats"
+                                  :request_str   => "get_impression_stats",
+                                  :function_str  => "getImpressionStats"
                                 }
                              ]
                             }

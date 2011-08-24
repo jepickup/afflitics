@@ -7,6 +7,9 @@ require 'rspec/rails'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+#Load fabricators
+Dir[Rails.root.join("spec/fabricators/*.rb")].each {|f| require f}
+
 RSpec.configure do |config|
   # == Mock Framework
   #
@@ -24,8 +27,19 @@ RSpec.configure do |config|
     DatabaseCleaner.orm = "mongoid"
   end
   
-  config.before(:each) do
+  config.before(:all) do
     DatabaseCleaner.clean
+
+    #Create fabrications
+    @test_user      = Fabricate(:test_user)
+    @test_network   = Fabricate(:affiliate_window)
+    @test_subscription = Fabricate(:affiliate_window_sub, :user => @test_user, :network => @test_network)
+
+    #Test attributes
+    @valid_network = @test_network.name
+    @valid_function = @test_network.services[0].functions[0].request_str
+    @valid_user_config = { :username => 'afftest' }
+  
   end
 
 end
